@@ -1,0 +1,32 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;    
+}
+
+body {
+    align-items: center;
+    background-image: linear-gradient(90deg, #0d4da0, #4f96cf);
+    color: #eee;
+    display: flex;
+    flex-direction: column;
+    font-family: System-ui;
+    font-weight: 600;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+    width: 100%;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+button {
+    padding: 10px 30px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 4px #222, -1px -1px 4px #555 inset;
+    font-size: 1.3rem;
+    margin: 5px;
+}
