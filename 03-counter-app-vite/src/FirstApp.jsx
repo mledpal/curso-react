@@ -1,7 +1,5 @@
 import PropTypes from 'prop-types';
 
-const getSaludo = (nombre) =>  'Hola '+ nombre
-
 export const FirstApp = ( { titulo, subtitulo, nombre } ) => {
 
     // if(!titulo) {
@@ -10,9 +8,9 @@ export const FirstApp = ( { titulo, subtitulo, nombre } ) => {
 
     return (
         <>
-        <h1>{ getSaludo('Miguel') }</h1>
         {/* <code>{ JSON.stringify (newMessage) }</code> */}
-        <p>{ titulo }</p>
+        <h1 data-testid="test-title">{ titulo }</h1>                
+        <p>{ subtitulo }</p>
         <p>{ subtitulo }</p>
         <p>{ nombre }</p>
         </>
@@ -21,12 +19,12 @@ export const FirstApp = ( { titulo, subtitulo, nombre } ) => {
 
 FirstApp.propTypes = {
     nombre: PropTypes.string,
-    subtitulo: PropTypes.number,
+    subtitulo: PropTypes.string,
     titulo: PropTypes.string.isRequired,
 }
 
 FirstApp.defaultProps = {
     nombre: 'Miguel Ledesma',
-    subtitulo: 0,
+    subtitulo: 'Subtitulo',
     titulo : 'No hay título',
 }
