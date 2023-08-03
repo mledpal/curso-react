@@ -1,6 +1,5 @@
 import { useState } from "react";
-import { AddCategory} from "./components/AddCategory";
-import { GiftGrid } from "./components/GifGrid";
+import { AddCategory, GiftGrid } from './components';
 
 
 export const GifExpertApp = () => { 
@@ -8,8 +7,7 @@ export const GifExpertApp = () => {
     const [categories, setCategories] = useState(['Dragon Ball']);
 
     const onAddCategory = ( nuevaCategoria ) => {
-        //setCategories( ( cat ) => [...cat, 'Call Of Duty'] );
-  
+        
         if(!categories.includes(nuevaCategoria)){
             setCategories( [nuevaCategoria, ...categories] );
         } else {
