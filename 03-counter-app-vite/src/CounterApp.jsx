@@ -12,10 +12,10 @@ export const CounterApp = ( { value } ) => {
     return (
         <>
             <h1>CounterApp</h1>
-            <h2>{ counter } </h2>
+            <h2>{ counter }</h2>
             <button onClick={ sumarContador }> +1 </button>
             <button onClick={ restarContador }> -1 </button>
-            <button onClick={ resetContador }> Reset </button>
+            <button aria-label="btnReset" onClick={ resetContador }> Reset </button>
         </>
     )
 }
