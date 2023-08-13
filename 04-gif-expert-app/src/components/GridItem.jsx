@@ -1,9 +1,16 @@
-export const GridItem = ( {id, title, url} ) => {
+import PropTypes from 'prop-types';
+
+export const GridItem = ({ id, title, url }) => {
 
     return (
         <div className="card">
-            <img src={ url } alt={ title } />
-            <p>{ title } </p>
-        </div>        
+            <img src={url} alt={title} />
+            <p>{title} </p>
+        </div>
     )
+}
+
+GridItem.propTypes = {
+    title: PropTypes.string.isRequired,
+    url: PropTypes.string.isRequired
 }

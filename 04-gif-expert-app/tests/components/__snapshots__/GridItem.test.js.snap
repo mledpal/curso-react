@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Probando GridItem Debe de mostrar el componente correctamente 1`] = `
+<div>
+  <div
+    class="card"
+  >
+    <img
+      alt="Esto es un titulo"
+      src="http://miurl.com/"
+    />
+    <p>
+      Esto es un titulo
+       
+    </p>
+  </div>
+</div>
+`;
