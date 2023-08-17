@@ -38,6 +38,7 @@ export const FormWithCustomHook = () => {
                 name="password"
                 value={password}
                 onChange={onInputChange}
+                autoComplete="off"
             />
 
             <button
