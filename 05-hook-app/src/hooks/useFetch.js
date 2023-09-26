@@ -1,47 +1,42 @@
 import { useEffect, useState } from "react";
 
-export const useFetch = (url) => {
+export const useFetch = (url, counter) => {
+	const [state, setState] = useState({
+		data: null,
+		isLoading: true,
+		hasError: false,
+	});
 
-    const [state, setState] = useState({
-        data: null,
-        isLoading: true,
-        hasError: false,
-    });
+	const getFetch = async () => {
+		setState({
+			...state,
+			isLoading: true,
+		});
 
-    const getFetch = async () => {
+		try {
+			const rep = await fetch(url);
+			const data = await rep.json();
+			setState({
+				data,
+				isLoading: false,
+				hasError: false,
+			});
+		} catch (error) {
+			setState({
+				...state,
+				hasError: true,
+				isLoading: false,
+			});
+		}
+	};
 
-        setState({
-            ...state,
-            isLoading: true,
-        })
+	useEffect(() => {
+		getFetch();
+	}, [url, counter]);
 
-        try {
-            const rep = await fetch(url)
-            const data = await rep.json()
-            setState({
-                data,
-                isLoading: false,
-                hasError: false,
-
-            })
-
-        } catch (error) {
-            setState({
-                ...state,
-                hasError: true,
-                isLoading: false,
-            })
-        }
-    }
-
-    useEffect(() => {
-        getFetch();
-    }, [url]);
-
-
-    return {
-        data: state.data,
-        isLoading: state.isLoading,
-        hasError: state.hasError,
-    };
-}
+	return {
+		data: state.data,
+		isLoading: state.isLoading,
+		hasError: state.hasError,
+	};
+};
