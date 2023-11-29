@@ -34,8 +34,15 @@ export const useTodos = () => {
 	};
 
 	useEffect(() => {
-		localStorage.setItem("todos", JSON.stringify(todos));
+		localStorage.setItem("todos", JSON.stringify(todos));		
 	}, [todos]);
 
-	return { todos, handleDeleteTodo, handleToggleTodo, handleNewTodo };
+	return {
+		todos,
+		todosCount: todos.length,
+		pendingTodoCount: todos.filter((todo) => !todo.done).length,
+		handleDeleteTodo,
+		handleToggleTodo,
+		handleNewTodo,
+	};
 };
